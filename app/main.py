@@ -10,6 +10,7 @@ from app.database import engine, Base
 from app.routers.auth import router as auth_router
 from app.routers.customer import router as customer_router
 from app.routers.transaksi import router as transaksi_router
+from app.routers.checkout import router as checkout_router
 
 
 @asynccontextmanager
@@ -114,6 +115,8 @@ print("✅ Customer router registered")
 app.include_router(transaksi_router, prefix="/api/v1")
 print("✅ Transaksi router registered")
 
+app.include_router(checkout_router, prefix="/api/v1")
+print("✅ Checkout router registered")
 # Debug routes
 if settings.DEBUG:
     print("\n📋 Registered API Routes:")
